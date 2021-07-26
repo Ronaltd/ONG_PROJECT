@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-10">
+      <div class="card-volunteer">
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div class="form-volunteer-box py-5">
+              <%= simple_form_for @donation do |f| %>
+                <%= f.input :name, label: 'Nome do item:', class: "form-group" %>
+                <%= f.input :description, label: 'Descrição do item', class: "form-group" %>
+                <%= f.input :amount, label: 'Quantidade necessária', class: "form-group" %>
+                <%= f.input :donation_tag, as: :select, collection: Donation::TAGS %>
+                <%= f.input :status, label: 'Precisa agora desse item?', class: "form-group" %>
+                <%= f.button :submit, "Confirmar alterações", class: "button-banner" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

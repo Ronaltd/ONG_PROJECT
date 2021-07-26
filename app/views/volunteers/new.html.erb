@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-10">
+      <div class="card-volunteer">
+        <div class="form-header default-image-project">
+          <h2>Quero ser voluntário na Casa de Simeão</h2>
+          <p class="m-5">A Casa de Simeão conta com o auxílio de voluntários para melhor exercer as suas atividades e proporcionar melhores condições aos seus usuários. Caso tenha interesse em se voluntariar para alguma função ou projeto vinculado às atividades da Casa de Simeão será muito bem-vindo!</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div class="form-volunteer-box py-5">
+              <%= simple_form_for(@volunteer) do |f| %>
+                <%= f.input :volunteer_work, label: 'Qual função pretende se voluntariar', class: "form-group" %>
+                <%= f.input :description, label: 'Por favor, descreva as experiências que possui na área que pretende se voluntariar. Deixe seu telefone ou e-mail para que possamos entrar em contato!', class: "form-group" %>
+                <%= f.button :submit, "Enviar minha proposta", class: "button-banner" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

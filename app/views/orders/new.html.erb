@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-12 col-md-10">
+      <div class="card-volunteer">
+        <div class="form-header default-image-project">
+          <h2>Oferecer uma Doação</h2>
+          <p class="m-3">Para mandar mantimentos para a casa pedimos que você indique seus dados de contato, selecione os itens que deseja doar e depois leve os mantimentos para nosso endereço físico (ou envie uma entrega por aplicativo)</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8">
+            <div class="form-volunteer-box py-5">
+              <%= simple_form_for(@order) do |f| %>
+                <%= f.input :name, label: 'Nome:', placeholder: "Digite seu nome completo" %>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <%= f.input :email, placeholder: "email@exemplo.com", label: "Email:" %>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <%= f.input :phone, label: "Contato:", placeholder: "(99)99999-9999", input_html: { maxlength: 14, id: 'form_phone' } %>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <%= f.button :submit, "Escolher os items para doar", class: "button-donation-submit"  %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

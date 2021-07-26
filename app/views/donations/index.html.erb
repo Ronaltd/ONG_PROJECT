@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 my-3 responsive-col" style="box-shadow: 0 0 15px rgb(0 0 0 / 20%);">
+      <div class="py-5 text-center">
+        <h1 class="mb-3">Como contribuir?</h1>
+        <p> A Casa Simeão possui uma lista rotativa dos recursos materiais para a manutenção da ONG. A atual lista encontra-se disponivel logo abaixo para conferência. Para contribuir, basta clicar no botão "Doações".</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 my-3 buttons-col">
+      <%= link_to 'Doações', new_order_path, class:'button-banner mb-3'%>
+      <%= link_to 'Depositar valor', transfer_path, class:'button-banner'%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" style="padding-left: 0;">
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Categoria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @donations.each do |donation|%>
+            <% if donation.status != false && donation.amount > 0 %>
+              <% if donation.donation_tag == "Alimentos" %>
+                <tr class="bg-gray">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.amount} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% elsif donation.donation_tag == "Higiene Pessoal" %>
+                <tr class="bg-gray">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.amount} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% elsif donation.donation_tag == "Carnes" %>
+                <tr class="bg-white">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.amount} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% elsif donation.donation_tag == "Produtos de Limpeza" %>
+                <tr class="bg-gray">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.amount} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% else %>
+                <tr class="bg-white">
+                  <td><%= donation.name %></td>
+                  <td><%= "#{donation.amount} #{donation.description}" %></td>
+                  <td><%= donation.donation_tag %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

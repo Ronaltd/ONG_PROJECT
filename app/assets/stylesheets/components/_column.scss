@@ -1,0 +1,21 @@
+.responsive-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.buttons-col{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .button-banner{
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
